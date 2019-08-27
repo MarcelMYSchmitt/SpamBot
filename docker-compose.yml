@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  spambot:
+    image: mrmyiagi/spambot
+    build:
+      context: .
+      dockerfile: SpamBot/Dockerfile
+    environment:
+      EmailSender: ${EmailSender}
+      EmailReceiver: ${EmailReceiver}
+      EmailSubject: ${EmailSubject}
+      EmailContent: ${EmailContent}
+      AmountEmailsToSend: ${AmountEmailsToSend}
+      SmtpClientPort: ${SmtpClientPort}
+      SmtpClientHost: ${SmtpClientHost}
+      EmailUserName: ${EmailUserName}
+      EmailUserPassword: ${EmailUserPassword}
